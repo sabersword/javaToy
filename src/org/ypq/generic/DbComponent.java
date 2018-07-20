@@ -10,11 +10,13 @@ import java.util.List;
 public class DbComponent {
 
     public <T> T genericFunc(int param) {
+        T result;
         if (param > 0) {
-            return (T) new BlackPerson();
+            result = (T) new BlackPerson();
         } else {
-            return (T) new Apple("red");
+            result = (T) new Apple("red");
         }
+        return result;
     }
 
     public <T> void printMsg(T... args){
@@ -33,5 +35,6 @@ public class DbComponent {
 //        list.add(new Apple("apple2"));  // 由于是? extends  所以不能修改
         System.out.println(list.get(0).getName());
     }
+
 
 }

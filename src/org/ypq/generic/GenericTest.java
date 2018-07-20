@@ -8,7 +8,7 @@ import java.util.List;
 public class GenericTest {
 
     public static void main(String[] args) throws Exception {
-        Person f = new DbComponent().genericFunc(1);
+        Person f = new DbComponent().genericFunc(0);
         System.out.println(f);
 
 
@@ -32,10 +32,11 @@ public class GenericTest {
         new DbComponent().printMsg("111",222,"aaaa","2323.4",55.55);
 
         DbComponent dbComponent = new DbComponent();
-        dbComponent.showKeyName(generic);
-        dbComponent.showKeyName(generic1);
-        dbComponent.showKeyName(generic2);
-        dbComponent.showKeyName(generic3);
+//        dbComponent.showKeyName(generic);
+//        dbComponent.showKeyName(generic1);
+//        dbComponent.showKeyName(generic2);
+//        dbComponent.showKeyName(generic3);
+
 
         List l = new ArrayList();
         l.add(new Apple("apple"));
