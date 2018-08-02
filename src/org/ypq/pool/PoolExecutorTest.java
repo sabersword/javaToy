@@ -62,7 +62,6 @@ public class PoolExecutorTest {
         System.out.println("核心线程数" + executor.getCorePoolSize());
         System.out.println("线程池数" + executor.getPoolSize());
         System.out.println("队列任务数" + executor.getQueue().size());
-
     }
 
 }
