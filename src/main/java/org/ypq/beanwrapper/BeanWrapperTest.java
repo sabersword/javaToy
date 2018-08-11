@@ -13,7 +13,8 @@ public class BeanWrapperTest {
         BeanWrapper pbw = new BeanWrapperImpl(parent);
         pbw.setPropertyValue(new PropertyValue("name", "ypq"));
         pbw.setPropertyValue("age", "10");
-        pbw.setPropertyValue("birthDate", new Date());
+        pbw.registerCustomEditor(Date.class, new DatePropertyEditor());
+        pbw.setPropertyValue("birthDate", "111");
 
         Object child = Class.forName("org.ypq.beanwrapper.Child").newInstance();
         BeanWrapper cbw = new BeanWrapperImpl(child);
