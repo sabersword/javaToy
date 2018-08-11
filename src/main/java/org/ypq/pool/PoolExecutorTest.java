@@ -32,7 +32,8 @@ public class PoolExecutorTest {
 //        ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 6, 5, TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
 
         //LinkedBlockingDeque根本不受最大线程数影响。 但是当LinkedBlockingDeque有大小限制时就会受最大线程数影响了
-//        ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 4, 5, TimeUnit.SECONDS, new LinkedBlockingDeque<Runnable>());
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 4, 5, TimeUnit.SECONDS, new LinkedBlockingDeque<Runnable>());
+
 
         //首先为三个任务开启了三个核心线程1，2，3，然后第四个任务和第五个任务加入到队列中，第六个任务因为队列满了，就直接创建一个新线程4，这是一共有四个线程，没有超过最大线程数。8秒后，非核心线程收超时时间影响回收了，因此线程池只剩3个线程了。
 //        ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 4, 5, TimeUnit.SECONDS, new LinkedBlockingDeque<Runnable>(2));
@@ -41,7 +42,7 @@ public class PoolExecutorTest {
 //        ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 4, 5, TimeUnit.SECONDS, new LinkedBlockingDeque<Runnable>(1));
 
         //这次在添加第五个任务时就报错了，因为SynchronousQueue各奔不保存任务，收到一个任务就去创建新线程。所以第五个就会抛异常了。
-        ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 4, 5, TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
+//        ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 4, 5, TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
 
         executor.execute(myRunnable);
         executor.execute(myRunnable);
@@ -62,6 +63,8 @@ public class PoolExecutorTest {
         System.out.println("核心线程数" + executor.getCorePoolSize());
         System.out.println("线程池数" + executor.getPoolSize());
         System.out.println("队列任务数" + executor.getQueue().size());
+//        executor.awaitTermination(10, TimeUnit.SECONDS);
+//        executor.shutdown();
     }
 
 }
