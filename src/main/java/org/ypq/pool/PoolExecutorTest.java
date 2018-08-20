@@ -1,7 +1,6 @@
 package org.ypq.pool;
 
 import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -11,7 +10,6 @@ public class PoolExecutorTest {
 
 
         Runnable myRunnable = new Runnable() {
-            @Override
             public void run() {
                 try {
                     Thread.sleep(2000);
