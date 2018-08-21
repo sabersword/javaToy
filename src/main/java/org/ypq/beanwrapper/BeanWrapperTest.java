@@ -20,7 +20,7 @@ public class BeanWrapperTest {
         BeanWrapper cbw = new BeanWrapperImpl(child);
         cbw.setPropertyValue("parent", parent);
 
-        cbw.setPropertyValue("parent.age", 30);
+        cbw.setPropertyValue("parent.age", 35);
         System.out.println(child);
     }
 
