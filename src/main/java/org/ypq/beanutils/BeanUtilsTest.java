@@ -22,6 +22,7 @@ public class BeanUtilsTest {
 
         try {
             BeanUtils.populate(student, properties);
+            // fasf
             Map<String, String> describes = BeanUtils.describe(student);
             System.out.println("测试完成");
         } catch (IllegalAccessException e) {
