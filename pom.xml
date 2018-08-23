@@ -14,10 +14,17 @@
         <artifactId>spring-webmvc</artifactId>
         <version>4.3.16.RELEASE</version>
     </dependency>
+
     <dependency>
         <groupId>commons-beanutils</groupId>
         <artifactId>commons-beanutils</artifactId>
         <version>1.9.3</version>
+    </dependency>
+
+    <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-all</artifactId>
+        <version>4.0.36.Final</version>
     </dependency>
 
 </dependencies>
